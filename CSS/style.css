@@ -25,7 +25,6 @@ body{
 /* HEADER */
 
 header{
-    width: 100%;
     display: grid;
     margin-top: 40px;
     grid-template-columns: 0.5fr 2fr 0.8fr;
@@ -71,6 +70,7 @@ color: #901C1C;
 }
 
 .passer_au_contenu{
+    display: none;
     font-size: 18px;
     background-color: #DB8876;
     color: black;
@@ -139,33 +139,52 @@ h2{
 }
 
 @media screen and (max-width:768px){
-    .header img{
-        width: 100%;
+    body{
+        margin: 10px;
     }
-    .header {
-        display: grid;
+    header {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin: 20px;
         grid-template-areas: "logo photo"
-                            "hashtags";
+                            "hashtags hashtags";
+        grid-template-columns: none;
     }
     header img{
         grid-area: logo;
+        padding: 0px;
+        margin-right: 20px;
+        width: 80%;
+        padding-top: 8px;
     }
     .nos_photographes{
         grid-area: photo;
+        font-size: 18px;
     }
     header nav{
         grid-area: hashtags;
+        display: flex;
+    }
+    .category{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    nav li{
+        padding-bottom: 15px;
     }
     .photographer__wrapper{
-        width: 100%;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         margin-bottom: 100px;
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
+        width: 100%;
+        grid-gap: 30px;
     }
     .photographer{
         width: 100%;
         height: 100%;
+    }
+    nav{
+        display: flex;
     }
 }
 
@@ -173,6 +192,6 @@ h2{
 /* PHOTOGRAPHERS PAGE */
 /* PHOTOGRAPHERS PAGE */
 
-.photographer page{
+.photographer.page{
     background-color:lightgray;
 }
